@@ -1,233 +1,699 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
+<head>
     <meta charset="utf-8">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Roshan Thomas - Software Engineer and DevOps Engineer</title>
+    
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-	
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" integrity="sha384-thyJY0mibKOMGsqeOqL+ZrGGDObQBZoNb3L7ZzJ4UiiyuYPhYsnvtgWD8RGPLhTC" crossorigin="anonymous">
-	<style>
-  .text{
-    font-family: 'Calibri' !important;
-    font-size: 18px !important;
-    font-weight: bold !important;
-    color:black !important;
-    background-color: #d0d9d0 !important;
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #7c3aed;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+            --border-color: #e5e7eb;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #ffffff;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        /* Header Section */
+        .header-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 3rem 0;
+            margin: -2rem -1rem 3rem -1rem;
+            border-radius: 0 0 2rem 2rem;
+        }
+        
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .name {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .tagline {
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            color: white;
+        }
+        
+        .contact-item i {
+            width: 20px;
+            margin-right: 0.75rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Section Styling */
+        .section {
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            flex-direction: column;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+        
+        /* Experience and Education Cards */
+        .card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .job-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .company {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .duration {
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .responsibilities {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .responsibilities li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        
+        .responsibilities li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .skill-category h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .skill-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
 
-  }
-	.bd-placeholder-img {
-	font-size: 1.125rem;
-	text-anchor: middle;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-  }
+        .skill-badge {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: none;
+            transition: transform 0.2s ease;
+        }
+        
+        .skill-badge:hover {
+            transform: scale(1.05);
+        }
 
-  @media (min-width: 600px) {
-	.bd-placeholder-img-lg {
-	  font-size: 3.5rem;
-	}
-  }
-</style>
-    <title>Roshan Thomas</title>
-  </head>
-  <body>
-  <style>
-  div.a {
-    font-family: 'Calibri';
-    font-size: 45px;
-    font-weight: bold;
-  }
-  div.b {
-    font-family: 'Calibri' !important;
-    font-size: 16px !important;
-    font-weight: bold !important;
-  }
-  div.bar {
-    background-color: #4287f5;
-  }
-  div.c {
-    font-family: 'Calibri';
-    font-size: 35px;
-    font-weight: bold;
-    color: #4287f5;
-  }
-  div.d {
-    font-family: 'Calibri';
-    font-size: 25px;
-    font-weight: bold;
-    color: #6e0ec9 !important;
-  }
-  div.e {
-    font-family: 'Calibri';
-    font-size: 20px;
-    font-weight: bold;
-  }
-  div.f {
-    font-family: 'Calibri';
-    font-size: 15px;
-    font-weight: bold;
-    color: #000000;
-  }
-  div.g {
-    font-family: 'Calibri';
-    font-size: 20px;
-    font-weight: bold;
-    color: #6e0ec9 !important;
-  }
-  li {
-    font-weight: bold;
-  }
-  </style>
-  <div class="container">
-    <br>
-  <div class="row">
-    <div class="col-8">
-      <div class="a">Roshan Thomas</div>
-      <div class="g">Computer Science is my Passion. Engineering is my Profession.</div>
-    </div>
-    <div class="col-4 float-right">
-      <div class="b"><i class="fas fa-envelope"></i> <a style="text-decoration:none" href="mailto:rshn.thomas1@gmail.com">rshn.thomas1@gmail.com</a></div>
-      <div class="b"><i class="fas fa-phone fa-flip-horizontal"></i> 814XXX1434</div>
-      <div class="b"><i class="fas fa-map-marker-alt"></i> Bangalore, India</div>
-      <div class="b"><i class="fab fa-github"></i> <a style="text-decoration:none" href="https://github.com/rshnGhost" target="_blank">github.com/rshnGhost</a></div>
-	  <div class="b"><i class="fas fa-portrait"></i> <a style="text-decoration:none" href="https://rshnthms.github.io/" target="_blank">rshnthms.github.io</a></div>	  
-    </div>
-  </div>
-    <div class="col-12"><hr></div>
-      <div class="row">
-      <div class="col-12">
-
-              <div class="c">EDUCATION</div>
-              <div class="row">
-              <div class="col-6">
-                <div class="d">Bachelor of Engineering</div>
-                <div class="e">Reva Institute of Technology and Management</div>
-                <div class="f">Computer Science and Engineering <div class="float-right">54%</div></div>
-                <div class="f">11/2014 - 05/2021, <div class="float-right">Bangalore, India</div></div>
-                <br/>
-              </div>
-              <div class="col-6">
-                <div class="d">Diploma</div>
-                <div class="e">Impact Polytechnic</div>
-                <div class="f">Computer Science and Engineering <div class="float-right">69%</div></div>
-                <div class="f">06/2011 - 07/2014, <div class="float-right">Bangalore, India</div></div>
-                <br/>
-              </div>
-              </div>
-
-              <div class="c">WORK EXPERIENCE</div>
-              <div class="row">
-			  <div class="col-6">
-              <div class="d">Associate Software Engineer</div>
-              <div class="e">Mount Carmel College</div>
-              <div class="f">08/2021 -  Present <div class="float-right">India</div></div>
-              <ul>
-			  <li class="f">Website App Development</li>
-              <li class="f">Automated Testing Modules</li>
-              <li class="f">Troubleshoot bugs</li>
-			  <li class="f">Managing Faculty and Student Information</li>
-              </ul>
-              <br/>
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-tag {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: none;
+            transition: transform 0.2s ease;
+        }
+        
+        .tech-tag:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Projects Section */
+        .project {
+            background: var(--bg-light);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .project-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-duration {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-tag {
+            background: white;
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--primary-color);
+        }
+        
+        /* Print Styles */
+        @media print {
+            .container {
+                max-width: none;
+                padding: 1rem;
+            }
+            
+            .header-section {
+                background: var(--primary-color) !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .card {
+                break-inside: avoid;
+                box-shadow: none;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .name {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <div class="header-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h1 class="name">Roshan Thomas</h1>
+                        <p class="tagline">Computer Science is my Passion. Engineering is my Profession.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="contact-info">
+                            <a href="mailto:rshn.thomas1+githubcv@gmail.com" class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>rshn.thomas1+githubcv@gmail.com</span>
+                            </a>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span id="phoneNo">814XXX1434</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Bangalore, India</span>
+                            </div>
+                            <a href="https://github.com/rshnGhost" target="_blank" class="contact-item">
+                                <i class="fab fa-github"></i>
+                                <span>github.com/rshnGhost</span>
+                            </a>
+                            <a href="https://rshnthms.github.io/" target="_blank" class="contact-item">
+                                <i class="fas fa-globe"></i>
+                                <span>rshnthms.github.io</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-              <div class="col-6">
-              <div class="d">Technical Trainer</div>
-              <div class="e">Freelancer</div>
-              <div class="f">07/2017 - 07/2021 <div class="float-right">India</div></div>
-              <ul>
-              <li class="f">C Programming and Data Structue</li>
-              <li class="f">Python Basics</li>
-              <li class="f">Website Development using Django</li>
-              <li class="f">Machine Learning</li>
-              </ul>
-              <br/>
-            </div>
-            <div class="col-6">
-              <div class="d">Internship</div>
-              <div class="e">L&T, Bangalore</div>
-              <div class="f">06/2016 - 08/2016, <div class="float-right">Bangalore, India</div></div>
-              <ul>
-              <li class="f">Working along with Company internal procedures</li>
-              <li class="f">Monitoring and Reporting Network issuses</li>
-              <li class="f">Managing tickets for Internal issuses</li>
-              </ul>
-              <div class="f">Contact: Jagan Mohan P</div>
-              <br/>
-            </div>
-              </div>
+        </div>
 
-            <div class="c">PERSONAL PROJECTS</div>
+        <!-- Education -->
+        <div class="section">
+            <h2 class="section-title">Education</h2>
             <div class="row">
-            <div class="col-6">
-            <div class="g">Password manager [Raspberry pi] <div class="f float-right">(11/2020 - Present)</div></div>
-            <ul>
-              <li class="f">web Usb</li>
-              <li class="f">chrome Extension</li>
-            </ul>
-            <div class="g">Online Course Managment <div class="f float-right">(08/2020 - Present)</div></div>
-              <ul>
-                <li class="f">Python[Django]</li>
-              </ul>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <h3 class="job-title">Bachelor of Engineering</h3>
+                        <div class="company">Reva Institute of Technology and Management</div>
+                        <div class="duration">
+                            <span>Computer Science and Engineering</span>
+                            <span>2014 - 2021</span>
+                        </div>
+                        <p class="text-muted">Bangalore, India</p>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <h3 class="job-title">Diploma</h3>
+                        <div class="company">Impact Polytechnic</div>
+                        <div class="duration">
+                            <span>Computer Science and Engineering</span>
+                            <span>2011 - 2014</span>
+                        </div>
+                        <p class="text-muted">Bangalore, India</p>
+                    </div>
+                </div>
             </div>
-            <div class="col-6">
-            <div class="g">Twitter Sentiment Analysis <div class="f float-right">(06/2019 - 07/2020)</div></div>
-            <ul>
-              <li class="f">Python[Django]</li>
-            </ul>
-            <div class="g">Implementation of IEEE paper <div class="f float-right">(06/2012 - 07/2013)</div></div>
-            <ul>
-              <li class="f">JSP</li>
-            </ul>
-          </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="section">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <h3 class="job-title">Software Engineer & DevOps Engineer</h3>
+                        <div class="company">Thakral One Solutions</div>
+                        <div class="duration">
+                            <span>November 2021 - Present</span>
+                            <span>India</span>
+                        </div>
+                        <div class="mb-2"><strong>Sub-clients:</strong> <em>Gemlife, Nespresso</em></div>
+                        <ul class="responsibilities">
+                            <li>TalentMaster ATS (Design Development, Full-stack)</li>
+                            <li>AWS DevOps: Configured OpenSearch, Lambda, SQS, SimpleDB, Step Functions, RDS, CodeCommit, S3</li>
+                            <li>Azure DevOps: VM task management, CI/CD pipeline development, build, deploy and test automation</li>
+                            <li>Containerization with Docker for application deployment and scaling</li>
+                            <li>Container management using Portainer for Docker orchestration</li>
+                            <li>Web server configuration and management using Nginx</li>
+                            <li>Local AWS development using LocalStack for testing and development</li>
+                            <li>WSL (Windows Subsystem for Linux) environment setup and management</li>
+                            <li>Cluster upgrades, patching, backup & recovery operations</li>
+                            <li>Linux/Unix system administration and server management</li>
+                            <li>Automation with Ansible for infrastructure provisioning and configuration</li>
+                            <li>System monitoring, troubleshooting, and performance optimization</li>
+                            <li>ETL pipeline development using Python for data processing</li>
+                            <li>Git Operations: Pull Request approvals, branch management, merge conflict resolution</li>
+                            <li>Platform Management: BitBucket, Jenkins, Platform.sh service deployment</li>
+                            <li>Data quality and consistency enforcement across systems</li>
+                            <li>Encryption and secure access implementation</li>
+                            <li>Python Dashboard Development and SharePoint Integration</li>
+                        </ul>
+                        <small class="text-muted">Contact: Jeremy Hebblethwaite</small>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <h3 class="job-title">Associate Software Engineer</h3>
+                        <div class="company">Mount Carmel College</div>
+                        <div class="duration">
+                            <span>August 2021 - October 2021</span>
+                            <span>India</span>
+                        </div>
+                        <ul class="responsibilities">
+                            <li>Website App Development</li>
+                            <li>Automated Testing Modules</li>
+                            <li>Bug troubleshooting and resolution</li>
+                            <li>Faculty and Student Information Management</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <h3 class="job-title">Technical Trainer</h3>
+                        <div class="company">Freelancer</div>
+                        <div class="duration">
+                            <span>July 2017 - July 2021</span>
+                            <span>India</span>
+                        </div>
+                        <ul class="responsibilities">
+                            <li>C Programming and Data Structures</li>
+                            <li>Python Programming Fundamentals</li>
+                            <li>Website Development using Django Framework</li>
+                            <li>Machine Learning Concepts and Implementation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <h3 class="job-title">Software Engineering Intern</h3>
+                        <div class="company">Larsen & Toubro, Bangalore</div>
+                        <div class="duration">
+                            <span>June 2016 - August 2016</span>
+                            <span>Bangalore, India</span>
+                        </div>
+                        <ul class="responsibilities">
+                            <li>Worked with company internal procedures and protocols</li>
+                            <li>Network monitoring and issue reporting</li>
+                            <li>Internal ticket management system</li>
+                        </ul>
+                        <small class="text-muted">Contact: Jagan Mohan P</small>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="c">TECHNICAL LANGUAGES</div><br>
-              <span class="badge badge-secondary text"> C </span>
-              <span class="badge badge-secondary text"> Python </span>
-              <span class="badge badge-secondary text"> Django </span>
-              <span class="badge badge-secondary text"> Heroku </span>
-              <span class="badge badge-secondary text"> Postgres </span>
-              <span class="badge badge-secondary text"> AutoIt </span>
-              <span class="badge badge-secondary text"> Java </span>
-              <span class="badge badge-secondary text"> JSP </span>
-              <span class="badge badge-secondary text"> PHP </span>
-              <span class="badge badge-secondary text"> Libre Office </span>
-              <span class="badge badge-secondary text"> MS Office </span><br><br>
-              <span class="badge badge-secondary text"> Mangment of Software </span>
-              <span class="badge badge-secondary text"> Installing Operating System </span>
-              <span class="badge badge-secondary text"> Google Cloud Computing </span>
-              <span class="badge badge-secondary text"> Shell Scripting </span>
+        <!-- Projects -->
+        <div class="section">
+            <h2 class="section-title">Personal Projects</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="project card">
+                        <h3 class="project-title">Password Manager (Raspberry Pi)</h3>
+                        <div class="project-duration">November 2020 - Present</div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Web USB</span>
+                            <span class="tech-tag">Chrome Extension</span>
+                            <span class="tech-tag">Raspberry Pi</span>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <h3 class="project-title">FastAPI Application for Scheduler</h3>
+                        <div class="project-duration">2024 - 2025</div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Scheduler</span>
+                            <span class="tech-tag">CRON Jobs</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Traefik</span>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <h3 class="project-title">Python Dashboard & SharePoint Automation</h3>
+                        <div class="project-duration">2022 - Present</div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SharePoint API</span>
+                            <span class="tech-tag">Data Visualization</span>
+                            <span class="tech-tag">Automation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="project">
+                        <h3 class="project-title">Twitter Sentiment Analysis</h3>
+                        <div class="project-duration">June 2019 - July 2020</div>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <h3 class="project-title">Implementation of IEEE Paper</h3>
+                        <div class="project-duration">June 2012 - July 2013</div>
+                        <div class="project-tech">
+                            <span class="tech-tag">JSP</span>
+                            <span class="tech-tag">Java</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <br><br><div class="c">REGIONAL LANGUAGES</div><br>
-              <span class="badge badge-secondary text"> English </span>
-              <span class="badge badge-secondary text"> Kannada </span>
-              <span class="badge badge-secondary text"> Malayalam </span>
-              <span class="badge badge-secondary text"> Hindi </span>
+        <!-- Skills -->
+        <div class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming & Scripting</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">C</span>
+                        <span class="tech-tag">Selenium</span>
+                        <span class="tech-tag">Shell Scripting / Bash</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">Kafka (Basics)</span>
+                        <span class="tech-tag">CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>AWS Services</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">S3</span>
+                        <span class="tech-tag">RDS</span>
+                        <span class="tech-tag">Step Functions</span>
+                        <span class="tech-tag">CodeCommit</span>
+                        <span class="tech-tag">SimpleDB</span>
+                        <span class="tech-tag">OpenSearch</span>
+                        <span class="tech-tag">Lambda</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Frameworks & Databases</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Bootstrap</span>
+                        <span class="tech-tag">JSP</span>
+                        <span class="tech-tag">SharePoint API</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">SQLite</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Polars</span>
+                        <span class="tech-tag">NumPy</span>
+                        <span class="tech-tag">Pytest</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Cloud & DevOps</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">AWS Cloud Platform</span>
+                        <span class="tech-tag">Azure Cloud Platform</span>
+                        <span class="tech-tag">WSL</span>
+                        <span class="tech-tag">Nginx</span>
+                        <span class="tech-tag">Azure VM Configuration</span>
+                        <span class="tech-tag">VM Scheduler Tasks</span>
+                        <span class="tech-tag">Jenkins</span>
+                        <span class="tech-tag">Backblaze</span>
+                        <span class="tech-tag">VM Service Management</span>
+                        <span class="tech-tag">Azure Pipelines</span>
+                        <span class="tech-tag">Docker Containerization</span>
+                        <span class="tech-tag">Portainer</span>
+                        <span class="tech-tag">LocalStack</span>
+                        <span class="tech-tag">GCP</span>
+                        <span class="tech-tag">Ansible Automation</span>
+                        <span class="tech-tag">BitBucket</span>
+                        <span class="tech-tag">Platform.sh</span>
+                        <span class="tech-tag">CI/CD Pipelines</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Development & Automation</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Linux/Unix Administration</span>
+                        <span class="tech-tag">Cluster Upgrades & Patching</span>
+                        <span class="tech-tag">Backup & Recovery</span>
+                        <span class="tech-tag">AutoIt</span>
+                        <span class="tech-tag">Git Version Control</span>
+                        <span class="tech-tag">N8N</span>
+                        <span class="tech-tag">System Monitoring & Troubleshooting</span>
+                        <span class="tech-tag">Encryption & Secure Access</span>
+                        <span class="tech-tag">Data Quality Enforcement</span>
+                        <span class="tech-tag">Dashboard Development</span>
+                        <span class="tech-tag">Cron Job Applications</span>
+                        <span class="tech-tag">Task Schedulers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <br><br><div class="c">INTERESTS</div><br>
-              <span class="badge badge-secondary text"> Computer Gaming </span>
-              <span class="badge badge-secondary text"> Cricket </span>
-              <span class="badge badge-secondary text"> Football </span>
-              <span class="badge badge-secondary text"> Reading Books </span>
-              <span class="badge badge-secondary text"> Endeavour Python Modules </span>
-      </div>
+        <!-- Languages -->
+        <div class="section">
+            <h2 class="section-title">Languages</h2>
+            <div class="tech-tags">
+                <span class="tech-tag">English</span>
+                <span class="tech-tag">Kannada</span>
+                <span class="tech-tag">Malayalam</span>
+                <span class="tech-tag">Hindi</span>
+            </div>
+        </div>
+
+        <!-- Interests -->
+        <div class="section">
+            <h2 class="section-title">Interests</h2>
+            <div class="tech-tags">
+                <span class="tech-tag">Computer Gaming</span>
+                <span class="tech-tag">Cricket</span>
+                <span class="tech-tag">Football</span>
+                <span class="tech-tag">Reading Books</span>
+                <span class="tech-tag">Python Development</span>
+            </div>
+        </div>
     </div>
 
-    <!-- Optional JavaScript; choose one of the two! -->
+    <script>
+        // Dynamic title with date
+        const today = new Date();
+        const formattedDate = today.toISOString().split('T')[0].replace(/-/g, '_');
+        document.title = `Roshan Thomas - Resume_${formattedDate}`;
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+        // Print phone number prompt
+        window.addEventListener("beforeprint", function(event) {
+            document.querySelectorAll('*').forEach((el) => {
+                el.setAttribute("opacity", el.style.opacity);
+                el.setAttribute("transform", el.style.transform);
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+                el.style.pointerEvents = 'none';
+            });
+            const phone = prompt("Please Enter Phone Number (or press Cancel to keep current)", "814XXX1434");
+            const phoneElement = document.getElementById("phoneNo");
+            if (phone && /^([0-9]{10,})$/.test(phone)) {
+                phoneElement.textContent = phone;
+            }
+        });
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-    -->
-	</div>
-  </body>
+        window.addEventListener("afterprint", () => {
+            document.querySelectorAll('*').forEach((el) => {
+                el.style.opacity = el.getAttribute("opacity");
+                el.style.transform = el.getAttribute("transform");
+                el.style.pointerEvents = 'auto';
+            });
+        });
+
+        // Smooth scrolling and animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            document.querySelectorAll('.card, .project').forEach((el) => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
