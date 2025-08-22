@@ -352,6 +352,35 @@
         </div>
 
         <main>
+            <!-- Education -->
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <h3 class="job-title">Bachelor of Engineering</h3>
+                            <div class="company">Reva Institute of Technology and Management</div>
+                            <div class="duration">
+                                <span>Computer Science and Engineering</span>
+                                <span>2014 - 2021</span>
+                            </div>
+                            <p class="text-muted">Bangalore, India</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <h3 class="job-title">Diploma</h3>
+                            <div class="company">Impact Polytechnic</div>
+                            <div class="duration">
+                                <span>Computer Science and Engineering</span>
+                                <span>2011 - 2014</span>
+                            </div>
+                            <p class="text-muted">Bangalore, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Work Experience -->
             <div class="section">
                 <h2 class="section-title">Work Experience</h2>
@@ -434,35 +463,6 @@
                                 <li>Internal ticket management system</li>
                             </ul>
                             <small class="text-muted">Contact: Jagan Mohan P</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Education -->
-            <div class="section">
-                <h2 class="section-title">Education</h2>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <h3 class="job-title">Bachelor of Engineering</h3>
-                            <div class="company">Reva Institute of Technology and Management</div>
-                            <div class="duration">
-                                <span>Computer Science and Engineering</span>
-                                <span>2014 - 2021</span>
-                            </div>
-                            <p class="text-muted">Bangalore, India</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="card">
-                            <h3 class="job-title">Diploma</h3>
-                            <div class="company">Impact Polytechnic</div>
-                            <div class="duration">
-                                <span>Computer Science and Engineering</span>
-                                <span>2011 - 2014</span>
-                            </div>
-                            <p class="text-muted">Bangalore, India</p>
                         </div>
                     </div>
                 </div>
@@ -651,22 +651,8 @@
         const formattedDate = today.toISOString().split('T')[0].replace(/-/g, '_');
         document.title = `Roshan Thomas - Resume_${formattedDate}`;
 
-        let swapped = false;
-        let parentContainer, firstSection, secondSection;
-
         // Print phone number prompt
         window.addEventListener("beforeprint", function(event) {
-            // Swap first and second section
-            const sections = document.querySelectorAll("main > .section");
-            if (sections.length >= 2 && !swapped) {
-                parentContainer = sections[0].parentNode;
-                firstSection = sections[0];
-                secondSection = sections[1];
-
-                parentContainer.insertBefore(secondSection, firstSection); // swap
-                swapped = true;
-            }
-
             document.querySelectorAll('*').forEach((el) => {
                 el.setAttribute("opacity", el.style.opacity);
                 el.setAttribute("transform", el.style.transform);
@@ -682,12 +668,6 @@
         });
 
         window.addEventListener("afterprint", () => {
-            // Restore section order
-            if (swapped && parentContainer && firstSection && secondSection) {
-                parentContainer.insertBefore(firstSection, secondSection);
-                swapped = false;
-            }
-            
             document.querySelectorAll('*').forEach((el) => {
                 el.style.opacity = el.getAttribute("opacity");
                 el.style.transform = el.getAttribute("transform");
