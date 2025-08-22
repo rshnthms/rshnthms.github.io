@@ -9,7 +9,7 @@
 
 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" width="16"/> [github.com/rshnGhost](https://github.com/rshnGhost)
 🌐 [rshnthms.github.io](https://rshnthms.github.io)
-📄 <a href="https://rshnthms.github.io/static/resume.pdf" download>Resume</a>
+📄 <a href="https://rshnthms.github.io/static/resume.pdf" download target="_blank" rel="noopener noreferrer">Resume</a>
 
 ------------------------------------------------------------------------
 
