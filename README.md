@@ -5,11 +5,11 @@
 
 📧 [rshn.thomas1+githubcv@gmail.com](mailto:rshn.thomas1+githubcv@gmail.com)
 📞 ```+91 8147671434```
-📍 Bangalore, India \
+📍 Bangalore, India
 
 <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" width="16"/> [github.com/rshnGhost](https://github.com/rshnGhost)
 🌐 [rshnthms.github.io](https://rshnthms.github.io)
-📄 [Resume](<a href="https://rshnthms.github.io/static/resume.pdf" download>)
+📄 <a href="https://rshnthms.github.io/static/resume.pdf" download>Resume</a>
 
 ------------------------------------------------------------------------
 
